@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumpsuit 3</title>
+
+    <script src="https://kit.fontawesome.com/4a447404cd.js" crossorigin="anonymous"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
+    <style>
+        *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        h1{
+          font-size: 2.5rem;
+          font-weight: 1000;
+        }
+  
+        h2{
+          font-size: 1.8rem;
+          font-weight: 600;
+        }
+  
+        h3{
+          font-size: 1.4rem;
+          font-weight: 800;
+        }
+  
+        h4{
+          font-size: 1.1rem;
+          font-weight: 600;
+        }
+  
+        h5{
+          font-size: 1rem;
+          font-weight: 400;
+          color: #1d1d1d;
+        }
+  
+        h6{
+          color: #D8D8D8;
+        }
+  
+        button{
+          font-size: 0.8rem;
+          font-weight: 700;
+          outline: none;
+          border: none;
+          background-color: #1d1d1d;
+          color: aliceblue;
+          padding: 13px 30px;
+          cursor: pointer;
+          text-transform: uppercase;
+          transition: 0.3s ease;
+        }
+  
+        button:hover{
+          background-color: #3a3833;
+        }
+  
+        .container img {
+        width: 50px;
+        object-fit: cover;
+        }
+  
+        hr{
+          width: 30px;
+          height: 2px;
+          background-color: #fb774b;
+        }
+  
+        .star{
+          padding: 10px 0;
+        }
+  
+        .star i{
+          font-size: 0.8rem;
+          color: gold;
+        }
+  
+        .navbar {
+          font-size: 16px;
+          top: 0;
+          left: 0;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+  
+        .navbar-light .navbar-nav .nav-link {
+        padding: 0 20px;
+        color: black;
+        transition: 0.3s ease;
+        }
+  
+        .navbar-light .navbar-nav .nav-link:hover,
+        .navbar i:hover,
+        .navbar-light .navbar-nav .nav-link.active,
+        .navbar i.nav-link.active {
+        color: coral;
+        }
+  
+        .navbar i{
+          font-size: 1.2rpm;    
+          padding: 0 7px;
+          cursor: pointer;
+          transition: 0.3 ease;
+        }
+  
+        #bar{
+          font-size: 1.5rem;
+          padding: 7px;
+          cursor: pointer;
+          transition: 0.3s ease;
+          color: black;
+        }
+  
+        #bar:hover,
+        #bar.active{
+          color: #fff;
+        }
+  
+        @media only screen and (max-width: 991px){
+          body > nav > div > button:hover,
+          body > nav > div > button:focus{
+            background-color: #fb774b;
+          }
+  
+          body > nav > div > button:hover #bar,
+          body > nav > div > button:focus #bar{
+            color: #fff;
+          }
+  
+          #navbarSupportedContent > ul{
+            margin: 1rem;
+            justify-content: flex-end;
+            align-items: flex-end;
+            text-align: right;
+          }
+  
+          #navbarSupportedContent > ul > li:nth-child(n) > a{
+            padding: 10px 0;
+          }
+        }
+  
+        /*mobile nav*/
+        .navbar-light .navbar-toggler{
+          border: none;
+          outline: none;
+        }
+  
+        #home {
+          background-image: url(images/background.jpg);
+          width: 100%;
+          height: 100vh;
+          background-size: cover;
+          background-position: top 60px center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+        }
+  
+        #home span{
+          color: coral;
+        }
+  
+        .row img{
+          width: 50px;
+        }
+  
+        .one img{
+          width: 350px;
+          height: 400px;
+          object-fit: cover;
+        }
+  
+        #new .one img{
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: relative;
+          object-fit: cover;
+        }
+  
+        #new .one .details{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          transition: 0.3s ease;
+        }
+  
+        #new .one:hover .details{
+          cursor: pointer;
+          background-color: rgba(245, 178, 178, 0.7);
+        }
+  
+        #new .one .details button{
+          display: inline-block;
+          font-size: 14px;
+          font-weight: 500;
+          color: #2a2a2a;
+          background: none;
+          text-transform: uppercase;
+          border-bottom: 1px solid #2a2a2a;
+          padding: 2.5px;
+          transform: translateY(70px);
+          transition: 0.3s ease;
+        }
+  
+        #new .one .details button:hover{
+          color: #fff;
+          border-bottom: 1px solid #fff;
+        }
+  
+        #new .one:nth-child(1) .details{
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: start;
+        }
+  
+        #new .one:nth-child(2) .details{
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          text-align: start;
+        }
+  
+        #new .one:nth-child(3) .details{
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: flex-end;
+          text-align: start;
+        }
+   
+        #featured .row img{
+          width: 250px;
+          height: 250px;
+          box-sizing: border-box;
+          object-fit: cover;
+          vertical-align: top;
+        }
+  
+        #featured .product{
+          text-align: center;
+        }
+  
+        .product{
+          cursor: pointer;
+          margin-bottom: 2rem;
+        }
+  
+        .product img{
+          transition: 0.3s all;
+        }
+  
+        .product:hover img{
+          opacity: 0.7;
+        }
+  
+        .product .buy-btn{
+          background-color: #fb774b;
+          transform: translateY(20px);
+          opacity: 0;
+          transition: 0.3s all;
+        }
+  
+        .product:hover .buy-btn{
+          transform: translateY(20px);
+          opacity: 1;
+        }
+  
+        #banner{
+          background-image: url(images/backgroung4.jpeg);
+          width: 100%;
+          height: 60vh;
+          background-size: cover;
+          background-position: top 70px center;
+          background-repeat: none;
+          background-attachment: fixed;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+        }
+         
+        #banner button{
+          transform: translateY(140px);
+        }
+  
+        .copyright img{
+          width: 100%;
+          height: 100%;
+        }
+  
+        footer{
+          background-color: #2a2a2a;
+        }
+  
+        footer h5{
+          color: #D8D8D8;
+          font-weight: 700;
+          font-size: 1.2rem;
+        }
+  
+        footer li{
+          padding-bottom: 4px;
+        }
+  
+        footer li a{
+          font-size: 0.8rem;
+          color: #999;
+        }
+  
+        footer li a:hover{
+          font-size: 0.8rem;
+          color: #D8D8D8;
+        }
+  
+        footer p{
+          color: #999;
+          font-size: 00.8rem;
+        }
+  
+        footer .copyright a{
+          color: #000;
+          width: 38px;
+          height: 38px;
+          background-color: #fff;
+          display: inline-block;
+          text-align: center;
+          line-height: 38px;
+          border-radius: 50%;
+          transition: 0.3s ease;
+          margin:  0 5px;
+        }
+  
+        footer .copyright a:hover{
+          color: #fff;
+          background-color: #fb774b;
+        }
+
+        .sl-sobe-carousel-sub-card-image{
+        display: block;
+        max-width: 180px;
+        max-height: 170px;
+        position: relative;
+        width: 100%;
+        padding-left: 10px;
+        float: left;
+        
+       }
+
+       .sl-sobe-carousel-sub-card-image li{
+          padding-left: 10px;
+          padding-bottom: 10px;
+        }
+
+       .sl-sobe-carousel-sub-card-image li a{
+        font-size: 1.2rem;
+        color: black;
+       }
+
+        .sl-sobe-carousel-sub-card-image li a:hover{
+        font-size: 1.2rem;
+        color: coral;
+        }
+
+        .sl-sobe-carousel-nav{
+          position: absolute;
+          height: 0;
+          top: 50%;
+          width: 100%;
+          z-index: 3;
+        }
+
+    #featured .sl-sobe-carousel-sub-card-image{
+        text-align: center;
+    }
+
+    .bxc-grid__image img {
+          width: 1500px;
+          height: 400px;
+          object-fit: cover;
+    }
+
+    .box img{
+      padding-top: 20px;
+      width: 1200px;
+    }
+
+      .product img{
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        object-fit: cover;
+      }
+
+      #featured > div.row.mx-auto.container > nav > ul > li.page-item.active > a{
+        background-color: black;
+      }
+
+      #featured > div.row.mx-auto.container > nav > ul > li:nth-child(n):hover>a{
+        background-color: coral;
+        color: #fff;
+      }
+
+      .pagination a{
+        color: black;
+      }
+
+      </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white py-2 fixed-top">
+    <div class="container">
+        <img src="images/logo3.jpg" alt="" />
+        <h3>&ensp; flickr</h3>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span><i id="bar" class="fa-solid fa-bars"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">                                                                                                                                                                                                                                                                                              
+          <li class="nav-item">
+            <a class="nav-link" href="welcome.php">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="shop.php">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact-us.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="logout.php">Logout</a>
+        </li>
+          <li class="nav-item">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-bag-shopping"></i>
+          </li>
+          <div class="navbar-collapse collapse">
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+        <a class="nav-link" href="#">  <?php echo "Welcome ". $_SESSION['username']?></a>
+</div>
+         </div>
+    </div>
+  </nav>
+
+  <section id="featured" class="my-5 py-1">
+    <div class="container mt-2 py-5">
+      <h2 class="font-weight-bold">Dresses & Jumpsuits</h2>
+      <hr>
+      <p>Here you can check out new products with fair price on rymo.</p>
+    </div>
+    <div class="row mx-auto container">
+      <div class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+        <img alt="SERA Women&amp;#39;s Rayon Fit and Flare Maxi Jumpsuit" src="https://m.media-amazon.com/images/I/615OlAFDpaL._UY550_.jpg" data-old-hires="https://m.media-amazon.com/images/I/615OlAFDpaL._UL1440_.jpg" onload="markFeatureRenderForImageBlock(); this.onload='';setCSMReq('af');if(typeof addlongPoleTag === 'function'){ addlongPoleTag('af','desktop-image-atf-marker');};setCSMReq('cf')" data-a-image-name="landingImage" class="a-dynamic-image a-stretch-vertical" id="landingImage" data-a-dynamic-image="{&quot;https://m.media-amazon.com/images/I/615OlAFDpaL._UY550_.jpg&quot;:[550,413],&quot;https://m.media-amazon.com/images/I/615OlAFDpaL._UY679_.jpg&quot;:[679,509],&quot;https://m.media-amazon.com/images/I/615OlAFDpaL._UY741_.jpg&quot;:[741,556],&quot;https://m.media-amazon.com/images/I/615OlAFDpaL._UY445_.jpg&quot;:[445,334],&quot;https://m.media-amazon.com/images/I/615OlAFDpaL._UY500_.jpg&quot;:[500,375],&quot;https://m.media-amazon.com/images/I/615OlAFDpaL._UY879_.jpg&quot;:[879,659],&quot;https://m.media-amazon.com/images/I/615OlAFDpaL._UY606_.jpg&quot;:[606,455]}" style="max-width: 150px; max-height: 518px;">
+        <div class="star">
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+        </div>
+        <h5 class="p-name">
+          SERA</h5>
+         <h4 class="p-price">₹814 (57% off)</h4>
+         <button class="buy-btn">Buy Now</button>
+      </div>
+
+      <div class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+        <img alt="Miss Chase Women&amp;#39;s Solid Pleated Jumpsuit" src="https://m.media-amazon.com/images/I/71q6jdu5veL._UY679_.jpg" data-old-hires="https://m.media-amazon.com/images/I/71q6jdu5veL._UL1500_.jpg" onload="markFeatureRenderForImageBlock(); this.onload='';setCSMReq('af');if(typeof addlongPoleTag === 'function'){ addlongPoleTag('af','desktop-image-atf-marker');};setCSMReq('cf')" data-a-image-name="landingImage" class="a-dynamic-image a-stretch-vertical" id="landingImage" data-a-dynamic-image="{&quot;https://m.media-amazon.com/images/I/71q6jdu5veL._UY741_.jpg&quot;:[741,556],&quot;https://m.media-amazon.com/images/I/71q6jdu5veL._UY879_.jpg&quot;:[879,659],&quot;https://m.media-amazon.com/images/I/71q6jdu5veL._UY679_.jpg&quot;:[679,509],&quot;https://m.media-amazon.com/images/I/71q6jdu5veL._UY606_.jpg&quot;:[606,455],&quot;https://m.media-amazon.com/images/I/71q6jdu5veL._UY550_.jpg&quot;:[550,413],&quot;https://m.media-amazon.com/images/I/71q6jdu5veL._UY445_.jpg&quot;:[445,334],&quot;https://m.media-amazon.com/images/I/71q6jdu5veL._UY500_.jpg&quot;:[500,375]}" style="max-width: 150px; max-height: 518px;">
+       <div class="star">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star-half-stroke"></i>
+       </div>
+       <h5 class="p-name">
+        Miss  Chase</h5>
+        <h4 class="p-price">₹1,247 (57% off)</h4>
+        <button class="buy-btn">Buy Now</button>
+     </div>
+
+     <div class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+        <img alt="Purys Women Jumpsuit" src="https://m.media-amazon.com/images/I/6139OT1d4lL._UY679_.jpg" data-old-hires="https://m.media-amazon.com/images/I/6139OT1d4lL._UL1440_.jpg" onload="markFeatureRenderForImageBlock(); this.onload='';setCSMReq('af');if(typeof addlongPoleTag === 'function'){ addlongPoleTag('af','desktop-image-atf-marker');};setCSMReq('cf')" data-a-image-name="landingImage" class="a-dynamic-image a-stretch-vertical" id="landingImage" data-a-dynamic-image="{&quot;https://m.media-amazon.com/images/I/6139OT1d4lL._UY741_.jpg&quot;:[741,556],&quot;https://m.media-amazon.com/images/I/6139OT1d4lL._UY550_.jpg&quot;:[550,413],&quot;https://m.media-amazon.com/images/I/6139OT1d4lL._UY679_.jpg&quot;:[679,509],&quot;https://m.media-amazon.com/images/I/6139OT1d4lL._UY879_.jpg&quot;:[879,659],&quot;https://m.media-amazon.com/images/I/6139OT1d4lL._UY606_.jpg&quot;:[606,455],&quot;https://m.media-amazon.com/images/I/6139OT1d4lL._UY445_.jpg&quot;:[445,334],&quot;https://m.media-amazon.com/images/I/6139OT1d4lL._UY500_.jpg&quot;:[500,375]}" style="max-width: 150px; max-height: 518px;">
+       <div class="star">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+       </div>
+       <h5 class="p-name">
+        PURYS</h5>
+        <h4 class="p-price">₹584 (55% off)</h4>
+        <button class="buy-btn">Buy Now</button>
+     </div>
+
+     <div class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+        <img alt="Uptownie Lite Women&amp;#39;s Maxi Jumpsuit" src="https://m.media-amazon.com/images/I/51f6pk3hUyL._UX569_.jpg" data-old-hires="https://m.media-amazon.com/images/I/51f6pk3hUyL._UL1053_.jpg" onload="markFeatureRenderForImageBlock(); this.onload='';setCSMReq('af');if(typeof addlongPoleTag === 'function'){ addlongPoleTag('af','desktop-image-atf-marker');};setCSMReq('cf')" data-a-image-name="landingImage" class="a-dynamic-image a-stretch-horizontal" id="landingImage" data-a-dynamic-image="{&quot;https://m.media-amazon.com/images/I/51f6pk3hUyL._UX522_.jpg&quot;:[625,522],&quot;https://m.media-amazon.com/images/I/51f6pk3hUyL._UX569_.jpg&quot;:[681,569],&quot;https://m.media-amazon.com/images/I/51f6pk3hUyL._UX425_.jpg&quot;:[509,425],&quot;https://m.media-amazon.com/images/I/51f6pk3hUyL._UX466_.jpg&quot;:[558,466],&quot;https://m.media-amazon.com/images/I/51f6pk3hUyL._UX342_.jpg&quot;:[409,342],&quot;https://m.media-amazon.com/images/I/51f6pk3hUyL._UX385_.jpg&quot;:[461,385],&quot;https://m.media-amazon.com/images/I/51f6pk3hUyL._UX679_.jpg&quot;:[812,679]}" style="max-width: 150px; max-height: 477.73px;">
+       <div class="star">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+       </div>
+       <h5 class="p-name">
+        Uptownie lite</h5>
+        <h4 class="p-price">₹726 (68% off)</h4>
+        <button class="buy-btn">Buy Now</button>
+     </div>
+
+     <div class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+      <img alt="Fashion2wear Women&amp;#39;s A-Line Knee Length Dress (FW_MIDI Dress_Red_Medium)" src="https://m.media-amazon.com/images/I/61NyWv6oRZL._UY550_.jpg" data-old-hires="https://m.media-amazon.com/images/I/61NyWv6oRZL._UL1500_.jpg" onload="markFeatureRenderForImageBlock(); this.onload='';setCSMReq('af');if(typeof addlongPoleTag === 'function'){ addlongPoleTag('af','desktop-image-atf-marker');};setCSMReq('cf')" data-a-image-name="landingImage" class="a-dynamic-image a-stretch-vertical" id="landingImage" data-a-dynamic-image="{&quot;https://m.media-amazon.com/images/I/61NyWv6oRZL._UY550_.jpg&quot;:[550,367],&quot;https://m.media-amazon.com/images/I/61NyWv6oRZL._UY445_.jpg&quot;:[445,297],&quot;https://m.media-amazon.com/images/I/61NyWv6oRZL._UY500_.jpg&quot;:[500,333],&quot;https://m.media-amazon.com/images/I/61NyWv6oRZL._UY741_.jpg&quot;:[741,494],&quot;https://m.media-amazon.com/images/I/61NyWv6oRZL._UY606_.jpg&quot;:[606,404],&quot;https://m.media-amazon.com/images/I/61NyWv6oRZL._UY879_.jpg&quot;:[879,586],&quot;https://m.media-amazon.com/images/I/61NyWv6oRZL._UY679_.jpg&quot;:[679,453]}" style="max-width: 150px; max-height: 518px;">
+      <div class="star">
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-regular fa-star"></i>
+      </div>
+      <h5 class="p-name">
+        Fashion2wear</h5>
+       <h4 class="p-price">₹399 (60% off)</h4>
+       <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+      <img alt="ROSETTE Women&amp;#39;s Bodycon Maxi Dress-Big Checks (Free Size)" src="https://m.media-amazon.com/images/I/81zlZab-lHL._UX425_.jpg" data-old-hires="https://m.media-amazon.com/images/I/81zlZab-lHL._UL1500_.jpg" onload="markFeatureRenderForImageBlock(); this.onload='';setCSMReq('af');if(typeof addlongPoleTag === 'function'){ addlongPoleTag('af','desktop-image-atf-marker');};setCSMReq('cf')" data-a-image-name="landingImage" class="a-dynamic-image a-stretch-horizontal" id="landingImage" data-a-dynamic-image="{&quot;https://m.media-amazon.com/images/I/81zlZab-lHL._UX425_.jpg&quot;:[539,425],&quot;https://m.media-amazon.com/images/I/81zlZab-lHL._UX522_.jpg&quot;:[662,522],&quot;https://m.media-amazon.com/images/I/81zlZab-lHL._UX569_.jpg&quot;:[721,569],&quot;https://m.media-amazon.com/images/I/81zlZab-lHL._UX385_.jpg&quot;:[488,385],&quot;https://m.media-amazon.com/images/I/81zlZab-lHL._UX466_.jpg&quot;:[591,466],&quot;https://m.media-amazon.com/images/I/81zlZab-lHL._UX679_.jpg&quot;:[861,679],&quot;https://m.media-amazon.com/images/I/81zlZab-lHL._UX342_.jpg&quot;:[434,342]}" style="max-width: 150px; max-height: 506.026px;">
+      <div class="star">
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-regular fa-star"></i>
+      </div>
+      <h5 class="p-name">
+       Rosette</h5>
+       <h4 class="p-price">₹399 (60% off)</h4>
+       <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+      <img alt="Leriya Fashion Western Dresses for Women&amp;#39;s|Stylish Latest Dresses|Skirts|Kurti with Palazzo Set|Long Kurtis|Stylish Tops|Western Tops for Girls|Gown|Maxi Dress Crop top" src="https://m.media-amazon.com/images/I/71BSmVrzZOS._UY679_.jpg" data-old-hires="https://m.media-amazon.com/images/I/71BSmVrzZOS._UL1500_.jpg" onload="markFeatureRenderForImageBlock(); this.onload='';setCSMReq('af');if(typeof addlongPoleTag === 'function'){ addlongPoleTag('af','desktop-image-atf-marker');};setCSMReq('cf')" data-a-image-name="landingImage" class="a-dynamic-image a-stretch-vertical" id="landingImage" data-a-dynamic-image="{&quot;https://m.media-amazon.com/images/I/71BSmVrzZOS._UY445_.jpg&quot;:[445,334],&quot;https://m.media-amazon.com/images/I/71BSmVrzZOS._UY500_.jpg&quot;:[500,375],&quot;https://m.media-amazon.com/images/I/71BSmVrzZOS._UY879_.jpg&quot;:[879,659],&quot;https://m.media-amazon.com/images/I/71BSmVrzZOS._UY741_.jpg&quot;:[741,556],&quot;https://m.media-amazon.com/images/I/71BSmVrzZOS._UY606_.jpg&quot;:[606,455],&quot;https://m.media-amazon.com/images/I/71BSmVrzZOS._UY679_.jpg&quot;:[679,509],&quot;https://m.media-amazon.com/images/I/71BSmVrzZOS._UY550_.jpg&quot;:[550,413]}" style="max-width: 150px; max-height: 518px;">
+      <div class="star">
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-regular fa-star"></i>
+      </div>
+      <h5 class="p-name">
+        Leriya Fashion</h5>
+       <h4 class="p-price">₹399 (80% off)</h4>
+       <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+      <img alt="Dream Beauty Fashion Hosiery A-Line Dress with Belt (38&amp;#34; Inches)" src="https://m.media-amazon.com/images/I/51ZbAXW9c3L._UY679_.jpg" data-old-hires="https://m.media-amazon.com/images/I/51ZbAXW9c3L._UL1500_.jpg" onload="markFeatureRenderForImageBlock(); this.onload='';setCSMReq('af');if(typeof addlongPoleTag === 'function'){ addlongPoleTag('af','desktop-image-atf-marker');};setCSMReq('cf')" data-a-image-name="landingImage" class="a-dynamic-image a-stretch-vertical" id="landingImage" data-a-dynamic-image="{&quot;https://m.media-amazon.com/images/I/51ZbAXW9c3L._UY550_.jpg&quot;:[550,343],&quot;https://m.media-amazon.com/images/I/51ZbAXW9c3L._UY679_.jpg&quot;:[679,424],&quot;https://m.media-amazon.com/images/I/51ZbAXW9c3L._UY606_.jpg&quot;:[606,378],&quot;https://m.media-amazon.com/images/I/51ZbAXW9c3L._UY741_.jpg&quot;:[741,463],&quot;https://m.media-amazon.com/images/I/51ZbAXW9c3L._UY879_.jpg&quot;:[879,549],&quot;https://m.media-amazon.com/images/I/51ZbAXW9c3L._UY445_.jpg&quot;:[445,278],&quot;https://m.media-amazon.com/images/I/51ZbAXW9c3L._UY500_.jpg&quot;:[500,312]}" style="max-width: 150px; max-height: 518px;">
+      <div class="star">
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-regular fa-star"></i>
+      </div>
+      <h5 class="p-name">
+        Dream Beauty <br> Fashion </h5>
+       <h4 class="p-price">₹348 (65% off)</h4>
+       <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+      <img alt="My Swag Women&amp;#39;s A-Line Maxi Dress" src="https://m.media-amazon.com/images/I/61LPB71OHeL._UY679_.jpg" data-old-hires="https://m.media-amazon.com/images/I/61LPB71OHeL._UL1500_.jpg" onload="markFeatureRenderForImageBlock(); this.onload='';setCSMReq('af');if(typeof addlongPoleTag === 'function'){ addlongPoleTag('af','desktop-image-atf-marker');};setCSMReq('cf')" data-a-image-name="landingImage" class="a-dynamic-image a-stretch-vertical" id="landingImage" data-a-dynamic-image="{&quot;https://m.media-amazon.com/images/I/61LPB71OHeL._UY606_.jpg&quot;:[606,404],&quot;https://m.media-amazon.com/images/I/61LPB71OHeL._UY741_.jpg&quot;:[741,494],&quot;https://m.media-amazon.com/images/I/61LPB71OHeL._UY879_.jpg&quot;:[879,586],&quot;https://m.media-amazon.com/images/I/61LPB71OHeL._UY445_.jpg&quot;:[445,297],&quot;https://m.media-amazon.com/images/I/61LPB71OHeL._UY500_.jpg&quot;:[500,333],&quot;https://m.media-amazon.com/images/I/61LPB71OHeL._UY550_.jpg&quot;:[550,367],&quot;https://m.media-amazon.com/images/I/61LPB71OHeL._UY679_.jpg&quot;:[679,453]}" style="max-width: 150px; max-height: 518px;">
+      <div class="star">
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-regular fa-star"></i>
+      </div>
+      <h5 class="p-name">
+        My Swag</h5>
+       <h4 class="p-price">₹384 (74% off)</h4>
+       <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+      <img alt="absorbing Women Fit &amp;amp; Flared Solid Dress" src="https://m.media-amazon.com/images/I/41eDyxilB+L._UY550_.jpg" data-old-hires="https://m.media-amazon.com/images/I/41eDyxilB+L._UL1056_.jpg" onload="markFeatureRenderForImageBlock(); this.onload='';setCSMReq('af');if(typeof addlongPoleTag === 'function'){ addlongPoleTag('af','desktop-image-atf-marker');};setCSMReq('cf')" data-a-image-name="landingImage" class="a-dynamic-image a-stretch-vertical" id="landingImage" data-a-dynamic-image="{&quot;https://m.media-amazon.com/images/I/41eDyxilB+L._UY445_.jpg&quot;:[445,297],&quot;https://m.media-amazon.com/images/I/41eDyxilB+L._UY500_.jpg&quot;:[500,334],&quot;https://m.media-amazon.com/images/I/41eDyxilB+L._UY879_.jpg&quot;:[879,587],&quot;https://m.media-amazon.com/images/I/41eDyxilB+L._UY741_.jpg&quot;:[741,495],&quot;https://m.media-amazon.com/images/I/41eDyxilB+L._UY679_.jpg&quot;:[679,453],&quot;https://m.media-amazon.com/images/I/41eDyxilB+L._UY606_.jpg&quot;:[606,405],&quot;https://m.media-amazon.com/images/I/41eDyxilB+L._UY550_.jpg&quot;:[550,367]}" style="max-width: 150px; max-height: 518px;">
+      <div class="star">
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-regular fa-star"></i>
+      </div>
+      <h5 class="p-name">
+        Absorbing</h5>
+       <h4 class="p-price">₹349 (83% off)</h4>
+       <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+      <img alt="Shasmi Women&amp;#39;s Comfortable Round Neck Full Sleeve Solid Midi Bodycon Casual Western Stylish Dress for Womens" src="https://m.media-amazon.com/images/I/51cVMfgsXKL._UY550_.jpg" data-old-hires="https://m.media-amazon.com/images/I/51cVMfgsXKL._UL1500_.jpg" onload="markFeatureRenderForImageBlock(); this.onload='';setCSMReq('af');if(typeof addlongPoleTag === 'function'){ addlongPoleTag('af','desktop-image-atf-marker');};setCSMReq('cf')" data-a-image-name="landingImage" class="a-dynamic-image a-stretch-vertical" id="landingImage" data-a-dynamic-image="{&quot;https://m.media-amazon.com/images/I/51cVMfgsXKL._UY606_.jpg&quot;:[606,364],&quot;https://m.media-amazon.com/images/I/51cVMfgsXKL._UY879_.jpg&quot;:[879,527],&quot;https://m.media-amazon.com/images/I/51cVMfgsXKL._UY550_.jpg&quot;:[550,330],&quot;https://m.media-amazon.com/images/I/51cVMfgsXKL._UY679_.jpg&quot;:[679,407],&quot;https://m.media-amazon.com/images/I/51cVMfgsXKL._UY445_.jpg&quot;:[445,267],&quot;https://m.media-amazon.com/images/I/51cVMfgsXKL._UY500_.jpg&quot;:[500,300],&quot;https://m.media-amazon.com/images/I/51cVMfgsXKL._UY741_.jpg&quot;:[741,445]}" style="max-width: 150px; max-height: 518px;">
+      <div class="star">
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-regular fa-star"></i>
+      </div>
+      <h5 class="p-name">
+        Shasmi</h5>
+       <h4 class="p-price">₹389 (79% off)</h4>
+       <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+        <img alt="Lecherous Women&amp;#39;s Wear Printed Crepe Febric Fancy Trendy Western one Piece/Dress/top/for Women&amp;#39;s and Girls" src="https://m.media-amazon.com/images/I/31xg9CtW6pL.jpg" data-old-hires="" onload="markFeatureRenderForImageBlock(); this.onload='';setCSMReq('af');if(typeof addlongPoleTag === 'function'){ addlongPoleTag('af','desktop-image-atf-marker');};setCSMReq('cf')" data-a-image-name="landingImage" class="a-dynamic-image a-stretch-vertical" id="landingImage" data-a-dynamic-image="{&quot;https://m.media-amazon.com/images/I/31xg9CtW6pL._UY550_.jpg&quot;:[550,367],&quot;https://m.media-amazon.com/images/I/31xg9CtW6pL._UY606_.jpg&quot;:[606,404],&quot;https://m.media-amazon.com/images/I/31xg9CtW6pL.jpg&quot;:[612,408],&quot;https://m.media-amazon.com/images/I/31xg9CtW6pL._UY445_.jpg&quot;:[445,297],&quot;https://m.media-amazon.com/images/I/31xg9CtW6pL._UY500_.jpg&quot;:[500,333]}" style="max-width: 150px; max-height: 475px;">
+      <div class="star">
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-regular fa-star"></i>
+      </div>
+      <h5 class="p-name">
+        Lecherous</h5>
+       <h4 class="p-price">₹339 (66% off)</h4>
+       <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <nav aria-label="...">
+      <ul class="pagination pt-5">
+        <li class="page-item disabled">
+          <a class="page-link">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="jumpsuit-1.html">1</a></li>
+        <li class="page-item" aria-current="page">
+          <a class="page-link" href="jumpsuit-2.html">2</a>
+        </li>
+        <li class="page-item active"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+
+    </div>
+    </section>
+
+  <footer class="mt-5 py-5">
+    <div class="row container mx-auto pt-4">
+      <div class="footer-one col-lg-3 col-md-6 col-12">
+        <div class="row">
+          <img src="images/logo3.jpg" alt="">
+          <h5><br>&emsp; flickr</h5>
+        </div>
+        <h5 class="pt-3 pb-2">ABOUT</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Wholesale</a></li>
+          <li><a href="#">Corporate Information</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+        <h5 class="pb-2">Featured</h5>
+        <ul class="text-uppercase list-unstyled">
+          <li><a href="#">men</a></li>
+          <li><a href="#">women</a></li>
+          <li><a href="#">boys</a></li>
+          <li><a href="#">girls</a></li>
+          <li><a href="#">new arrivals</a></li>
+          <li><a href="#">shoes</a></li>
+          <li><a href="#">clothes</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+        <h5 class="pb-2">Contact Us</h5>
+        <div>
+          <h6 class="text-uppercase">Address</h6>
+          <p>123 STREET NAME, CITY, US</p>
+        </div>
+        <div>
+          <h6 class="text-uppercase">Phone</h6>
+          <p>(123) 456-7890</p>
+        </div>
+        <div>
+          <h6 class="text-uppercase">Email</h6>
+          <p>hetvi4551@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="footer-one col-lg-3 col-md-6 col-12">
+        <h5 class="pb-2">Instagram</h5>
+        <div class="row">
+          <img class="img-fluid w-25 h-100% m-2" src="images/insta/OIP.jpg" alt="">
+          <img class="img-fluid w-25 h-100% m-2" src="images/insta/img1.webp" alt="">
+          <img class="img-fluid w-25 h-100% m-2" src="images/insta/img2.jpg" alt="">
+          <img class="img-fluid w-25 h-100% m-2" src="images/insta/img3.jpg" alt="">
+          <img class="img-fluid w-25 h-100% m-2" src="images/insta/img4.webp" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright mt-5">
+      <div class="row container mx-auto">
+
+        <div class="col-lg-3 col-md-6 col-12 mb-4">
+          <img src="images/payment4.png" alt="">
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-12 text-nowrap mb-2">
+          <p>flickr eCommerce © 2022. All Rights Reserved</p>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-12">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+  integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+  crossorigin="anonymous"
+></script>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+  integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+  crossorigin="anonymous"
+></script>
+</body>
+</html>

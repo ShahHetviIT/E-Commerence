@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurtis 1</title>
+
+    <script src="https://kit.fontawesome.com/4a447404cd.js" crossorigin="anonymous"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
+    <style>
+        *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        h1{
+          font-size: 2.5rem;
+          font-weight: 1000;
+        }
+  
+        h2{
+          font-size: 1.8rem;
+          font-weight: 600;
+        }
+  
+        h3{
+          font-size: 1.4rem;
+          font-weight: 800;
+        }
+  
+        h4{
+          font-size: 1.1rem;
+          font-weight: 600;
+        }
+  
+        h5{
+          font-size: 1rem;
+          font-weight: 400;
+          color: #1d1d1d;
+        }
+  
+        h6{
+          color: #D8D8D8;
+        }
+  
+        button{
+          font-size: 0.8rem;
+          font-weight: 700;
+          outline: none;
+          border: none;
+          background-color: #1d1d1d;
+          color: aliceblue;
+          padding: 13px 30px;
+          cursor: pointer;
+          text-transform: uppercase;
+          transition: 0.3s ease;
+        }
+  
+        button:hover{
+          background-color: #3a3833;
+        }
+  
+        .container img {
+        width: 50px;
+        object-fit: cover;
+        }
+  
+        hr{
+          width: 30px;
+          height: 2px;
+          background-color: #fb774b;
+        }
+  
+        .star{
+          padding: 10px 0;
+        }
+  
+        .star i{
+          font-size: 0.8rem;
+          color: gold;
+        }
+  
+        .navbar {
+          font-size: 16px;
+          top: 0;
+          left: 0;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+  
+        .navbar-light .navbar-nav .nav-link {
+        padding: 0 20px;
+        color: black;
+        transition: 0.3s ease;
+        }
+  
+        .navbar-light .navbar-nav .nav-link:hover,
+        .navbar i:hover,
+        .navbar-light .navbar-nav .nav-link.active,
+        .navbar i.nav-link.active {
+        color: coral;
+        }
+  
+        .navbar i{
+          font-size: 1.2rpm;    
+          padding: 0 7px;
+          cursor: pointer;
+          transition: 0.3 ease;
+        }
+  
+        #bar{
+          font-size: 1.5rem;
+          padding: 7px;
+          cursor: pointer;
+          transition: 0.3s ease;
+          color: black;
+        }
+  
+        #bar:hover,
+        #bar.active{
+          color: #fff;
+        }
+  
+        @media only screen and (max-width: 991px){
+          body > nav > div > button:hover,
+          body > nav > div > button:focus{
+            background-color: #fb774b;
+          }
+  
+          body > nav > div > button:hover #bar,
+          body > nav > div > button:focus #bar{
+            color: #fff;
+          }
+  
+          #navbarSupportedContent > ul{
+            margin: 1rem;
+            justify-content: flex-end;
+            align-items: flex-end;
+            text-align: right;
+          }
+  
+          #navbarSupportedContent > ul > li:nth-child(n) > a{
+            padding: 10px 0;
+          }
+        }
+  
+        /*mobile nav*/
+        .navbar-light .navbar-toggler{
+          border: none;
+          outline: none;
+        }
+  
+        #home {
+          background-image: url(images/background.jpg);
+          width: 100%;
+          height: 100vh;
+          background-size: cover;
+          background-position: top 60px center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+        }
+  
+        #home span{
+          color: coral;
+        }
+  
+        .row img{
+          width: 50px;
+        }
+  
+        .one img{
+          width: 350px;
+          height: 400px;
+          object-fit: cover;
+        }
+  
+        #new .one img{
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: relative;
+          object-fit: cover;
+        }
+  
+        #new .one .details{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          transition: 0.3s ease;
+        }
+  
+        #new .one:hover .details{
+          cursor: pointer;
+          background-color: rgba(245, 178, 178, 0.7);
+        }
+  
+        #new .one .details button{
+          display: inline-block;
+          font-size: 14px;
+          font-weight: 500;
+          color: #2a2a2a;
+          background: none;
+          text-transform: uppercase;
+          border-bottom: 1px solid #2a2a2a;
+          padding: 2.5px;
+          transform: translateY(70px);
+          transition: 0.3s ease;
+        }
+  
+        #new .one .details button:hover{
+          color: #fff;
+          border-bottom: 1px solid #fff;
+        }
+  
+        #new .one:nth-child(1) .details{
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: start;
+        }
+  
+        #new .one:nth-child(2) .details{
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          text-align: start;
+        }
+  
+        #new .one:nth-child(3) .details{
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: flex-end;
+          text-align: start;
+        }
+   
+        #featured .row img{
+          width: 250px;
+          height: 250px;
+          box-sizing: border-box;
+          object-fit: cover;
+          vertical-align: top;
+        }
+  
+        #featured .product{
+          text-align: center;
+        }
+  
+        .product{
+          cursor: pointer;
+          margin-bottom: 2rem;
+        }
+  
+        .product img{
+          transition: 0.3s all;
+        }
+  
+        .product:hover img{
+          opacity: 0.7;
+        }
+  
+        .product .buy-btn{
+          background-color: #fb774b;
+          transform: translateY(20px);
+          opacity: 0;
+          transition: 0.3s all;
+        }
+  
+        .product:hover .buy-btn{
+          transform: translateY(20px);
+          opacity: 1;
+        }
+  
+        #banner{
+          background-image: url(images/backgroung4.jpeg);
+          width: 100%;
+          height: 60vh;
+          background-size: cover;
+          background-position: top 70px center;
+          background-repeat: none;
+          background-attachment: fixed;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+        }
+         
+        #banner button{
+          transform: translateY(140px);
+        }
+  
+        .copyright img{
+          width: 100%;
+          height: 100%;
+        }
+  
+        footer{
+          background-color: #2a2a2a;
+        }
+  
+        footer h5{
+          color: #D8D8D8;
+          font-weight: 700;
+          font-size: 1.2rem;
+        }
+  
+        footer li{
+          padding-bottom: 4px;
+        }
+  
+        footer li a{
+          font-size: 0.8rem;
+          color: #999;
+        }
+  
+        footer li a:hover{
+          font-size: 0.8rem;
+          color: #D8D8D8;
+        }
+  
+        footer p{
+          color: #999;
+          font-size: 00.8rem;
+        }
+  
+        footer .copyright a{
+          color: #000;
+          width: 38px;
+          height: 38px;
+          background-color: #fff;
+          display: inline-block;
+          text-align: center;
+          line-height: 38px;
+          border-radius: 50%;
+          transition: 0.3s ease;
+          margin:  0 5px;
+        }
+  
+        footer .copyright a:hover{
+          color: #fff;
+          background-color: #fb774b;
+        }
+
+        .sl-sobe-carousel-sub-card-image{
+        display: block;
+        max-width: 180px;
+        max-height: 170px;
+        position: relative;
+        width: 100%;
+        padding-left: 10px;
+        float: left;
+        
+       }
+
+       .sl-sobe-carousel-sub-card-image li{
+          padding-left: 10px;
+          padding-bottom: 10px;
+        }
+
+       .sl-sobe-carousel-sub-card-image li a{
+        font-size: 1.2rem;
+        color: black;
+       }
+
+        .sl-sobe-carousel-sub-card-image li a:hover{
+        font-size: 1.2rem;
+        color: coral;
+        }
+
+        .sl-sobe-carousel-nav{
+          position: absolute;
+          height: 0;
+          top: 50%;
+          width: 100%;
+          z-index: 3;
+        }
+
+    #featured .sl-sobe-carousel-sub-card-image{
+        text-align: center;
+    }
+
+    .bxc-grid__image img {
+          width: 1500px;
+          height: 400px;
+          object-fit: cover;
+    }
+
+    .box img{
+      padding-top: 20px;
+      width: 1200px;
+    }
+
+      .product img{
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        object-fit: cover;
+      }
+
+      #featured > div.row.mx-auto.container > nav > ul > li.page-item.active > a{
+        background-color: black;
+      }
+
+      #featured > div.row.mx-auto.container > nav > ul > li:nth-child(n):hover>a{
+        background-color: coral;
+        color: #fff;
+      }
+
+      .pagination a{
+        color: black;
+      }
+
+      </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white py-2 fixed-top">
+    <div class="container">
+        <img src="images/logo3.jpg" alt="" />
+        <h3>&ensp; flickr</h3>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span><i id="bar" class="fa-solid fa-bars"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">                                                                                                                                                                                                                                                                                              
+          <li class="nav-item">
+            <a class="nav-link" href="welcome.php">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="shop.php">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact-us.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="logout.php">Logout</a>
+        </li>
+          <li class="nav-item">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-bag-shopping"></i>
+          </li>
+          <div class="navbar-collapse collapse">
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+        <a class="nav-link" href="#">  <?php echo "Welcome ". $_SESSION['username']?></a>
+</div>
+         </div>
+    </div>
+  </nav>
+
+  <section id="featured" class="my-5 py-1">
+    <div class="container mt-5 py-5">
+      <h2 class="font-weight-bold">Kurtis</h2>
+      <hr>
+      <p>Here you can check out new products with fair price on rymo.</p>
+    </div>
+    <div class="row mx-auto container">
+      <div onclick="window.location.href='Dtop-1.html';" class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+        <img src="https://m.media-amazon.com/images/I/81xs-aPg5BL._AC_AA180_.jpg" alt="ANNI DESIGNER Women's Crepe Printed Kaftan Kurti (FARHIMA-RED_L_Black_Large), Opens in a new tab" width="180" height="180" class="sc-product-image" srcset="https://m.media-amazon.com/images/I/81xs-aPg5BL._AC_AA180_.jpg 1x, https://m.media-amazon.com/images/I/81xs-aPg5BL._AC_AA360_.jpg 2x, https://m.media-amazon.com/images/I/81xs-aPg5BL._AC_AA540_.jpg 3x, https://m.media-amazon.com/images/I/81xs-aPg5BL._AC_AA720_.jpg 4x">
+        <div class="star">
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+        </div>
+        <h5 class="p-name">
+          AELOMART
+          Women's Top</h5>
+         <h4 class="p-price">₹394 (75% off)</h4>
+         <button class="buy-btn">Buy Now</button>
+      </div>
+
+      <div onclick="window.location.href='Dtop-2.html';" class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+        <img src="https://m.media-amazon.com/images/I/61YkD1vIL1L._AC_AA180_.jpg" alt="Women's Jaipuri Rajasthani Rayon Straight Kurti with Plazzo for Women &amp; Girls Dress oIaxsy Green, Opens in a new tab" width="180" height="180" class="sc-product-image" srcset="https://m.media-amazon.com/images/I/61YkD1vIL1L._AC_AA180_.jpg 1x, https://m.media-amazon.com/images/I/61YkD1vIL1L._AC_AA360_.jpg 2x, https://m.media-amazon.com/images/I/61YkD1vIL1L._AC_AA540_.jpg 3x, https://m.media-amazon.com/images/I/61YkD1vIL1L._AC_AA720_.jpg 4x">
+       <div class="star">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star-half-stroke"></i>
+       </div>
+       <h5 class="p-name">
+        GENERIC</h5>
+        <h4 class="p-price">₹499 (69% off)</h4>
+        <button class="buy-btn">Buy Now</button>
+     </div>
+
+     <div onclick="window.location.href='Dtop-3.html';" class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+        <img src="https://m.media-amazon.com/images/I/71rFyU9bxGL._AC_AA180_.jpg" alt="Fashion Basket Women's Silk Anarkali Semi Stitched Rama Salwar suit (F1273_Rama_Free Size), Opens in a new tab" width="180" height="180" class="sc-product-image" srcset="https://m.media-amazon.com/images/I/71rFyU9bxGL._AC_AA180_.jpg 1x, https://m.media-amazon.com/images/I/71rFyU9bxGL._AC_AA360_.jpg 2x, https://m.media-amazon.com/images/I/71rFyU9bxGL._AC_AA540_.jpg 3x, https://m.media-amazon.com/images/I/71rFyU9bxGL._AC_AA720_.jpg 4x">
+       <div class="star">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+       </div>
+       <h5 class="p-name">
+        JUNEBERRY</h5>
+        <h4 class="p-price">₹299 (75% off)</h4>
+        <button class="buy-btn">Buy Now</button>
+     </div>
+
+     <div onclick="window.location.href='Dtop-4.html';" class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+        <img src="https://m.media-amazon.com/images/I/81wkmbuV-lL._AC_AA180_.jpg" alt="madhuram textiles Women's A-line and 3/4th Sleeves Fully Stitched Plain Printed Kurta with Ankle Length and Mandarin Neck Collar and Long Kurtis for Women (M-2082_Blue_M), Opens in a new tab" width="180" height="180" class="sc-product-image" srcset="https://m.media-amazon.com/images/I/81wkmbuV-lL._AC_AA180_.jpg 1x, https://m.media-amazon.com/images/I/81wkmbuV-lL._AC_AA360_.jpg 2x, https://m.media-amazon.com/images/I/81wkmbuV-lL._AC_AA540_.jpg 3x, https://m.media-amazon.com/images/I/81wkmbuV-lL._AC_AA720_.jpg 4x">
+       <div class="star">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+       </div>
+       <h5 class="p-name">
+        THE BLAZZE</h5>
+        <h4 class="p-price">₹299 (63% off)</h4>
+        <button class="buy-btn">Buy Now</button>
+     </div>
+
+     <div class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+        <img src="https://m.media-amazon.com/images/I/617fpstijES._AC_AA180_.jpg" alt="INDO ERA Women's Pure Cotton Salwar Suit (kurta set for women IE10KS4BE1096XS_Beige_X-Small), Opens in a new tab" width="180" height="180" class="sc-product-image" srcset="https://m.media-amazon.com/images/I/617fpstijES._AC_AA180_.jpg 1x, https://m.media-amazon.com/images/I/617fpstijES._AC_AA360_.jpg 2x, https://m.media-amazon.com/images/I/617fpstijES._AC_AA540_.jpg 3x, https://m.media-amazon.com/images/I/617fpstijES._AC_AA720_.jpg 4x">
+      <div class="star">
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-regular fa-star"></i>
+      </div>
+      <h5 class="p-name">
+        JUNEBERRY</h5>
+       <h4 class="p-price">₹349 (71% off)</h4>
+       <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+        <img src="https://m.media-amazon.com/images/I/71uX0TukDpL._AC_AA180_.jpg" alt="Vaamsi Women's Polyester Crepe a-line Kurta (VPK1651_L_Maroon_Large), Opens in a new tab" width="180" height="180" class="sc-product-image" srcset="https://m.media-amazon.com/images/I/71uX0TukDpL._AC_AA180_.jpg 1x, https://m.media-amazon.com/images/I/71uX0TukDpL._AC_AA360_.jpg 2x, https://m.media-amazon.com/images/I/71uX0TukDpL._AC_AA540_.jpg 3x, https://m.media-amazon.com/images/I/71uX0TukDpL._AC_AA720_.jpg 4x">
+      <div class="star">
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-regular fa-star"></i>
+      </div>
+      <h5 class="p-name">
+        Vaamsi</h5>
+       <h4 class="p-price">₹269 (73% off)</h4>
+       <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+        <img src="https://m.media-amazon.com/images/I/61eiQMoUA0L._AC_AA180_.jpg" alt="Juniper Women's Silk Layered &amp; Tiered Kurta (10011AEIBLACK_Black_XX-Large), Opens in a new tab" width="180" height="180" class="sc-product-image" srcset="https://m.media-amazon.com/images/I/61eiQMoUA0L._AC_AA180_.jpg 1x, https://m.media-amazon.com/images/I/61eiQMoUA0L._AC_AA360_.jpg 2x, https://m.media-amazon.com/images/I/61eiQMoUA0L._AC_AA540_.jpg 3x, https://m.media-amazon.com/images/I/61eiQMoUA0L._AC_AA720_.jpg 4x">
+      <div class="star">
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-regular fa-star"></i>
+      </div>
+      <h5 class="p-name">
+        Juniper</h5>
+       <h4 class="p-price">₹1023 (67% off)</h4>
+       <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+        <img src="https://m.media-amazon.com/images/I/61I4wDSV8UL._AC_AA180_.jpg" alt="BLACK MACY Women's Pure Cotton Straight Kurta and Palazzo Set (Green, XXL), Opens in a new tab" width="180" height="180" class="sc-product-image" srcset="https://m.media-amazon.com/images/I/61I4wDSV8UL._AC_AA180_.jpg 1x, https://m.media-amazon.com/images/I/61I4wDSV8UL._AC_AA360_.jpg 2x, https://m.media-amazon.com/images/I/61I4wDSV8UL._AC_AA540_.jpg 3x, https://m.media-amazon.com/images/I/61I4wDSV8UL._AC_AA720_.jpg 4x">
+      <div class="star">
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-regular fa-star"></i>
+      </div>
+      <h5 class="p-name">
+        BLACK MSEY</h5>
+       <h4 class="p-price">₹489 (76% off)</h4>
+       <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+        <img src="https://m.media-amazon.com/images/I/41Sf5ZPYVLL._AC_AA180_.jpg" alt="Women's Rayon Printed Anarkali Kurti Dupatta Set (Maroon_M), Opens in a new tab" width="180" height="180" class="sc-product-image" srcset="https://m.media-amazon.com/images/I/41Sf5ZPYVLL._AC_AA180_.jpg 1x, https://m.media-amazon.com/images/I/41Sf5ZPYVLL._AC_AA360_.jpg 2x, https://m.media-amazon.com/images/I/41Sf5ZPYVLL._AC_AA540_.jpg 3x, https://m.media-amazon.com/images/I/41Sf5ZPYVLL._AC_AA720_.jpg 4x">
+      <div class="star">
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-regular fa-star"></i>
+      </div>
+      <h5 class="p-name">
+        GENERIC</h5>
+       <h4 class="p-price">₹662 (78% off)</h4>
+       <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+        <img src="https://m.media-amazon.com/images/I/81xs-aPg5BL._AC_AA180_.jpg" alt="ANNI DESIGNER Women's Crepe Printed Kaftan Kurti (FARHIMA-RED_L_Black_Large), Opens in a new tab" width="180" height="180" class="sc-product-image" srcset="https://m.media-amazon.com/images/I/81xs-aPg5BL._AC_AA180_.jpg 1x, https://m.media-amazon.com/images/I/81xs-aPg5BL._AC_AA360_.jpg 2x, https://m.media-amazon.com/images/I/81xs-aPg5BL._AC_AA540_.jpg 3x, https://m.media-amazon.com/images/I/81xs-aPg5BL._AC_AA720_.jpg 4x">
+      <div class="star">
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-regular fa-star"></i>
+      </div>
+      <h5 class="p-name">
+        ANNI DESIGNER</h5>
+       <h4 class="p-price">₹379 (85% off)</h4>
+       <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+        <img src="https://m.media-amazon.com/images/I/71G34MBI-dL._AC_AA180_.jpg" alt="Daevish Women's Rayon High Side Slit Straight Kurta (DK333_Wine_XS), Opens in a new tab" width="180" height="180" class="sc-product-image" srcset="https://m.media-amazon.com/images/I/71G34MBI-dL._AC_AA180_.jpg 1x, https://m.media-amazon.com/images/I/71G34MBI-dL._AC_AA360_.jpg 2x, https://m.media-amazon.com/images/I/71G34MBI-dL._AC_AA540_.jpg 3x, https://m.media-amazon.com/images/I/71G34MBI-dL._AC_AA720_.jpg 4x">
+      <div class="star">
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-regular fa-star"></i>
+      </div>
+      <h5 class="p-name">
+        Daevish</h5>
+       <h4 class="p-price">₹449 (76% off)</h4>
+       <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product text-centre col-lg-3 col-md-4 col-12 py-3">
+        <img src="https://m.media-amazon.com/images/I/61zjn+Vy5xL._AC_AA180_.jpg" alt="vaamsi Crepe Digital Printed Kurti(VPK1583_Yellow_L), Opens in a new tab" width="180" height="180" class="sc-product-image" srcset="https://m.media-amazon.com/images/I/61zjn+Vy5xL._AC_AA180_.jpg 1x, https://m.media-amazon.com/images/I/61zjn+Vy5xL._AC_AA360_.jpg 2x, https://m.media-amazon.com/images/I/61zjn+Vy5xL._AC_AA540_.jpg 3x, https://m.media-amazon.com/images/I/61zjn+Vy5xL._AC_AA720_.jpg 4x">
+      <div class="star">
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-solid fa-star"></i>
+       <i class="fa-regular fa-star"></i>
+      </div>
+      <h5 class="p-name">
+        Vaamsi</h5>
+       <h4 class="p-price">₹269 (73% off)</h4>
+       <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <nav aria-label="...">
+      <ul class="pagination pt-5">
+        <li class="page-item disabled">
+          <a class="page-link">Previous</a>
+        </li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item" aria-current="page">
+          <a class="page-link" href="Kurti-2.html">2</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+
+    </div>
+    </section>
+
+  <footer class="mt-5 py-5">
+    <div class="row container mx-auto pt-4">
+      <div class="footer-one col-lg-3 col-md-6 col-12">
+        <div class="row">
+          <img src="images/logo3.jpg" alt="">
+          <h5><br>&emsp; flickr</h5>
+        </div>
+        <h5 class="pt-3 pb-2">ABOUT</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Wholesale</a></li>
+          <li><a href="#">Corporate Information</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+        <h5 class="pb-2">Featured</h5>
+        <ul class="text-uppercase list-unstyled">
+          <li><a href="#">men</a></li>
+          <li><a href="#">women</a></li>
+          <li><a href="#">boys</a></li>
+          <li><a href="#">girls</a></li>
+          <li><a href="#">new arrivals</a></li>
+          <li><a href="#">shoes</a></li>
+          <li><a href="#">clothes</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+        <h5 class="pb-2">Contact Us</h5>
+        <div>
+          <h6 class="text-uppercase">Address</h6>
+          <p>123 STREET NAME, CITY, US</p>
+        </div>
+        <div>
+          <h6 class="text-uppercase">Phone</h6>
+          <p>(123) 456-7890</p>
+        </div>
+        <div>
+          <h6 class="text-uppercase">Email</h6>
+          <p>hetvi4551@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="footer-one col-lg-3 col-md-6 col-12">
+        <h5 class="pb-2">Instagram</h5>
+        <div class="row">
+          <img class="img-fluid w-25 h-100% m-2" src="images/insta/OIP.jpg" alt="">
+          <img class="img-fluid w-25 h-100% m-2" src="images/insta/img1.webp" alt="">
+          <img class="img-fluid w-25 h-100% m-2" src="images/insta/img2.jpg" alt="">
+          <img class="img-fluid w-25 h-100% m-2" src="images/insta/img3.jpg" alt="">
+          <img class="img-fluid w-25 h-100% m-2" src="images/insta/img4.webp" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright mt-5">
+      <div class="row container mx-auto">
+
+        <div class="col-lg-3 col-md-6 col-12 mb-4">
+          <img src="images/payment4.png" alt="">
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-12 text-nowrap mb-2">
+          <p>flickr eCommerce © 2022. All Rights Reserved</p>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-12">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+  integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+  crossorigin="anonymous"
+></script>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+  integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+  crossorigin="anonymous"
+></script>
+</body>
+</html>
